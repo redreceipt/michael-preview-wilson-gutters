@@ -78,7 +78,14 @@ img{max-width:100%;display:block}
   gap:1rem;
 }
 .brand{display:flex;align-items:center;gap:.75rem;min-width:0}
-.logo{height:42px;width:auto;border-radius:10px;box-shadow:0 10px 24px rgba(2,10,10,.08)}
+.logo{
+  height:46px;
+  width:auto;
+  max-width:200px;
+  object-fit:contain;
+  border-radius:0;
+  box-shadow:none;
+}
 .brand-text{min-width:0}
 .brand-name{font-weight:800;letter-spacing:-.02em}
 .brand-sub{color:var(--muted);font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -254,6 +261,7 @@ img{max-width:100%;display:block}
   border-radius:calc(var(--radius) + 8px);
   padding:1.2rem;
 }
+.band-grid.simple{grid-template-columns:1fr}
 .checks{
   margin:.8rem 0 0;
   padding-left:1.05rem;
@@ -271,11 +279,7 @@ img{max-width:100%;display:block}
 .band-card p{color:var(--muted)}
 
 /* Quotes */
-.quote-grid{
-  display:grid;
-  grid-template-columns:repeat(2, minmax(0, 1fr));
-  gap:1rem;
-}
+.quote-grid{display:grid;grid-template-columns:1fr;gap:1rem}
 .quote{
   margin:0;
   background:linear-gradient(180deg, rgba(255,207,106,.22) 0%, rgba(255,255,255,1) 64%);
@@ -365,8 +369,28 @@ textarea{resize:vertical}
   border-color:rgba(229,27,35,.22);
 }
 
-/* Owner block */
-.owner{margin-top:2rem}
+/* Owner block (collapsed by default via <details>) */
+details.owner{margin-top:2rem}
+details.owner > summary{
+  cursor:pointer;
+  list-style:none;
+  background:rgba(7,27,27,.06);
+  border:1px solid rgba(7,27,27,.12);
+  padding:1rem 1.1rem;
+  border-radius:calc(var(--radius) + 8px);
+  font-weight:900;
+}
+details.owner > summary::-webkit-details-marker{display:none}
+details.owner > summary::after{
+  content:"+";
+  float:right;
+  font-weight:900;
+  color:rgba(7,27,27,.55);
+}
+details.owner[open] > summary::after{content:"–"}
+details.owner .owner-card{
+  margin-top:.75rem;
+}
 .owner-card{
   background:linear-gradient(180deg, rgba(7,27,27,.94) 0%, rgba(11,47,42,.94) 100%);
   color:#fff;
