@@ -260,12 +260,14 @@ img{max-width:100%;display:block}
   grid-template-columns:1fr .95fr;
   gap:1rem;
   align-items:stretch;
-  background:linear-gradient(180deg, rgba(11,47,42,.06) 0%, rgba(11,47,42,.02) 100%);
-  border:1px solid rgba(11,47,42,.10);
+  /* Opaque background: prevents underlying page gradients from showing through. */
+  background:linear-gradient(180deg, #ffffff 0%, #f3f7f6 100%);
+  border:1px solid var(--line);
   border-radius:calc(var(--radius) + 8px);
   padding:1.2rem;
   /* Avoid faint horizontal seams some browsers produce on subtle gradients. */
   overflow:hidden;
+  isolation:isolate;
 }
 .band-grid.simple{grid-template-columns:1fr}
 .checks{
