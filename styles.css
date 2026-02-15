@@ -485,6 +485,9 @@ details.owner .owner-card{
 @media (max-width: 620px){
   .brand-sub{display:none}
   .header-cta .ghost{display:none}
+  .header-row{flex-wrap:wrap;justify-content:center}
+  .brand{width:100%;justify-content:center}
+  .header-cta{width:100%;justify-content:center}
   .gallery-grid img{height:160px}
   .mobile-bar{display:flex}
   .site-footer{padding-bottom:6.75rem}
