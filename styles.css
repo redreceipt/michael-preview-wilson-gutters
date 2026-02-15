@@ -226,7 +226,11 @@ img{max-width:100%;display:block}
 .cap-sub{color:rgba(255,255,255,.82);font-size:.94rem}
 
 /* Main sections */
-.main{padding:2rem 1rem 4.5rem}
+.main{padding:2.5rem 1rem 4.75rem}
+.main > section{margin-top:3.25rem}
+.main > section:first-child{margin-top:0}
+.main > section.band{margin-top:2.5rem}
+.main > details.owner{margin-top:2.5rem}
 .section-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1rem}
 .section-head p{margin:0;color:var(--muted);max-width:70ch}
 .section-head h2{font-size:1.8rem}
